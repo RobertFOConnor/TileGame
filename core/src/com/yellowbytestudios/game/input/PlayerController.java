@@ -6,5 +6,5 @@ public interface PlayerController {
     boolean moveDown();
     boolean moveLeft();
     boolean moveRight();
-
+    void resetMoving();
 }

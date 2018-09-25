@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.yellowbytestudios.game.GameObjectArray;
 import com.yellowbytestudios.game.enemy.BloatEnemy;
 import com.yellowbytestudios.game.enemy.Enemy;
+import com.yellowbytestudios.game.enemy.LeftRightEnemy;
 import com.yellowbytestudios.game.item.Coin;
 import com.yellowbytestudios.game.item.Exit;
 
@@ -32,7 +33,7 @@ public class TileObjects {
                                 if ((int) (Math.random() * 2) == 0) {
                                     switch (cell.getTile().getId()) {
                                         case TileNames.ENEMY_BULLET:
-                                            array.add(new Enemy(getPos(col, Enemy.SIZE), getPos(row, Enemy.SIZE), Enemy.HORIZONTAL));
+                                            array.add(new LeftRightEnemy(getPos(col, Enemy.SIZE), getPos(row, Enemy.SIZE)));
                                             break;
                                         case TileNames.ENEMY_BLOAT:
                                             array.add(new BloatEnemy(getPos(col, Enemy.SIZE), getPos(row, Enemy.SIZE)));

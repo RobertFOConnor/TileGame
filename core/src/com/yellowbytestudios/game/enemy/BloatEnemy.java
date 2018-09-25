@@ -15,7 +15,7 @@ public class BloatEnemy extends Enemy {
     private Rectangle bounds;
 
     public BloatEnemy(float x, float y) {
-        super(x, y, 0);
+        super(x, y, SIZE, SIZE);
         getSprite().setRotation(0);
         getSprite().set(smallImage);
         setBounds();

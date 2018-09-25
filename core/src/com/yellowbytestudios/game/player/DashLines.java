@@ -53,7 +53,7 @@ public class DashLines {
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         sr.begin(ShapeRenderer.ShapeType.Filled);
-        sr.setColor(Color.GOLD);
+        sr.setColor(Color.WHITE);
 
         for (int i = 0; i < lines.size(); i++) {
             DashLine line = lines.get(i);

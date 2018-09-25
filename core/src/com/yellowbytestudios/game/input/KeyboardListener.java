@@ -23,4 +23,11 @@ public class KeyboardListener implements PlayerController {
     public boolean moveRight() {
         return Gdx.input.isKeyJustPressed(Input.Keys.D);
     }
+
+    @Override
+    public void resetMoving() {
+
+    }
+
+
 }

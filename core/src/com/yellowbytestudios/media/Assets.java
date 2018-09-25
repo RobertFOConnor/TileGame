@@ -49,9 +49,10 @@ public class Assets {
         assetMap.put("sound/wall_hit.wav", Sound.class);
         assetMap.put("sound/level_success.wav", Sound.class);
         assetMap.put("sound/coin.wav", Sound.class);
+        assetMap.put("sound/hurt.wav", Sound.class);
 
         //Music
-        assetMap.put("music/title.mp3", Music.class);
+        assetMap.put("music/grassland_643432.mp3", Music.class);
 
         Iterator it = assetMap.entrySet().iterator();
         while (it.hasNext()) {

@@ -1,9 +1,9 @@
 package com.yellowbytestudios.game;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
+import com.yellowbytestudios.game.enemy.DeathWave;
 import com.yellowbytestudios.game.enemy.Enemy;
 import com.yellowbytestudios.game.item.Coin;
 import com.yellowbytestudios.game.player.Player;
@@ -19,7 +19,6 @@ public class GameManager {
     private TileManager tileManager;
     private Player player;
     private GameObjectArray exits, coins, enemies;
-    private float maxScore;
     private float score = 0;
     private boolean paused = false;
     private boolean gameOver = false;
@@ -38,8 +37,7 @@ public class GameManager {
         camera.setY(player.getY());
         camera.update(player, 0);
 
-        maxScore = coins.size();
-        deathWave = new DeathWave(0, 0, 0, 15 * 80, 300f);
+        deathWave = new DeathWave(0, 0, 0, 15 * 80, 50f);
     }
 
     public void update(float delta) {
@@ -66,9 +64,8 @@ public class GameManager {
             Coin coin = (Coin) coins.get(i);
             coin.update(delta);
             if (player.overlapsObject(coin) && !coin.isCollected()) {
-                score++;
+                score+=100;
                 coin.startAnimation(player.isMovingHorizontal());
-                Gdx.input.vibrate(20);
                 Sounds.play("sound/coin.wav");
             }
             if (coin.isCollected() && !coin.isAnimating()) {
@@ -83,8 +80,7 @@ public class GameManager {
             Enemy enemy = (Enemy) enemies.get(i);
             enemy.update(delta);
             if (player.overlapsObject(enemy)) {
-                Sounds.play("sound/explode.wav");
-                gameOver = true;
+                player.onInjured();
             }
         }
     }
@@ -95,6 +91,7 @@ public class GameManager {
                 if (player.overlapsObject(exits.get(i))) {
                     Sounds.play("sound/level_success.wav");
                     levelComplete = true;
+                    gameOver = true;
                     player.disableConroller();
                     camera.startZoomIn();
                 }
@@ -126,7 +123,7 @@ public class GameManager {
     }
 
     public int getScore() {
-        return (int) (score / maxScore * 100);
+        return (int) score;
     }
 
     public boolean isLevelComplete() {

@@ -38,7 +38,7 @@ public class AndroidListener implements PlayerController {
         }));
     }
 
-    private void resetMoving() {
+    public void resetMoving() {
         movingUp = false;
         movingDown = false;
         movingLeft = false;

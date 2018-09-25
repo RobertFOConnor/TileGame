@@ -15,6 +15,8 @@ import com.yellowbytestudios.game.player.Player;
 
 import java.util.ArrayList;
 
+import static com.yellowbytestudios.game.tile.LayerNames.DECORATION_LAYER;
+import static com.yellowbytestudios.game.tile.LayerNames.FLOOR_LAYER;
 import static com.yellowbytestudios.game.tile.LayerNames.WALL_LAYER;
 
 
@@ -46,7 +48,7 @@ public class TileManager {
     private int currentRoom = 0;
     private int roomWidth = TileMapGenerator.SECTION_WIDTH;
 
-    private int[] renderLayers = new int[]{WALL_LAYER};
+    private int[] renderLayers = new int[]{FLOOR_LAYER, WALL_LAYER, DECORATION_LAYER};
 
     public TileManager(GameCamera camera) {
         this.gameCamera = camera;

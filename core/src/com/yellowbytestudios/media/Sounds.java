@@ -5,13 +5,14 @@ import com.badlogic.gdx.audio.Sound;
 
 public class Sounds {
 
-    private static boolean soundFXEnabled = false;
-    private static boolean musicEnabled = false;
+    private static boolean soundFXEnabled = true;
+    private static boolean musicEnabled = true;
     private static Music GAME_MUSIC;
 
     public static void play(String s) {
         if (soundFXEnabled) {
-            Assets.manager.get(s, Sound.class).play();
+            Sound sound = Assets.manager.get(s, Sound.class);
+            sound.play(0.05f);
         }
     }
 
@@ -40,7 +41,7 @@ public class Sounds {
         GAME_MUSIC = Assets.manager.get(music, Music.class);
         if (musicEnabled) {
             GAME_MUSIC.setLooping(true);
-            GAME_MUSIC.setVolume(0.4f);
+            GAME_MUSIC.setVolume(0.1f);
             GAME_MUSIC.play();
         }
     }

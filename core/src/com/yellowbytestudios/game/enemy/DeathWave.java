@@ -1,4 +1,4 @@
-package com.yellowbytestudios.game;
+package com.yellowbytestudios.game.enemy;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;

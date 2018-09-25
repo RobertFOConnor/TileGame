@@ -19,6 +19,7 @@ public abstract class GameObject {
     private float oldY;
     private float scaleX = 1, scaleY = 1;
     private float originX, originY;
+    private float opacity = 1f;
 
     public GameObject(Sprite sprite) {
         this.sprite = sprite;
@@ -33,7 +34,9 @@ public abstract class GameObject {
     }
 
     public void render(SpriteBatch sb) {
+        sb.setColor(1, 1, 1, opacity);
         sb.draw(sprite, x, y, originX, originY, width, height, scaleX, scaleY, sprite.getRotation());
+        sb.setColor(1, 1, 1, 1f);
     }
 
     public Rectangle getBounds() {
@@ -166,5 +169,13 @@ public abstract class GameObject {
 
     public void setY(float y) {
         this.y = y;
+    }
+
+    public void setOpacity(float opacity) {
+        this.opacity = opacity;
+    }
+
+    public float getOpacity() {
+        return opacity;
     }
 }

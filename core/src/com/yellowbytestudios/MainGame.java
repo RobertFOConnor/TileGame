@@ -51,7 +51,7 @@ public class MainGame extends ApplicationAdapter {
         if (Assets.update() && !loaded) {
             loaded = true;
             ScreenManager.setScreen(new GameScreen());
-            Sounds.setMusic("music/title.mp3");
+            Sounds.setMusic("music/grassland_643432.mp3");
 
         }
 
