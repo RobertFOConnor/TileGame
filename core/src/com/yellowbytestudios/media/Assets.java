@@ -35,15 +35,8 @@ public class Assets {
 
         assetMap.put("tilemap/tilesheet.png", Texture.class);
 
-        //Animation
-        assetMap.put("puppet/puppet.png", Texture.class);
-        assetMap.put("puppet/puppet_2.png", Texture.class);
-        assetMap.put("puppet/puppet_3.png", Texture.class);
-        assetMap.put("puppet/shop_bg.jpg", Texture.class);
-
         //Sound
         assetMap.put("sound/click.wav", Sound.class);
-        assetMap.put("sound/laser.wav", Sound.class);
         assetMap.put("sound/explode.wav", Sound.class);
         assetMap.put("sound/move.wav", Sound.class);
         assetMap.put("sound/wall_hit.wav", Sound.class);
